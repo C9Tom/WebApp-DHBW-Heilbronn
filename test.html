@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textausgabe</title>
+</head>
+<body>
+
+    <label for="textInput">Gib etwas ein:</label>
+    <input type="text" id="textInput" placeholder="Hier eingeben">
+
+    <button onclick="zeigeText()">Text anzeigen</button>
+
+    <p id="textAusgabe"></p>
+
+    <script>
+        function zeigeText() {
+            // Hole den Wert des Textfelds
+            var eingabeText = document.getElementById('textInput').value;
+
+            // Zeige den Text in der Textzeile an
+            document.getElementById('textAusgabe').innerText = "Eingegebener Text: " + eingabeText;
+        }
+    </script>
+</body>
+</html>
+https://api.emailvalidation.io/v1/info?apikey=ema_live_ofh534E68GDclPMzdp70Gltfwr45BhrMWfxe8Xaf&email=tomplieninger1%40web.de

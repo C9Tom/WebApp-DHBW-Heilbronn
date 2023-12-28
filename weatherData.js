@@ -1,7 +1,7 @@
 // Funktion zum Abrufen der JSON-Daten
 function getWeatherInfo() {
   // URL für die JSON-Daten
-  var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + globalLatitude + '&lon=' + globalLongitude + '&appid=APIKEY&units=metric';
+  var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + globalLatitude + '&lon=' + globalLongitude + '&appid=694dee5528dec74b53bfe0d732504cda&units=metric';
 
   // Fetch verwenden, um die Daten abzurufen
   fetch(url)
@@ -21,30 +21,20 @@ function displayWeatherInfo(data) {
   var weatherInfoElement = document.getElementById('weatherInfo');
 
   // HTML-Code für die Anzeige erstellen
-  var html = '<p><strong>Wetter:</strong> ' + data.weather[0].main + ' - ' + data.weather[0].description + '</p>';
-  html += '<p><strong>Temperatur:</strong> ' + data.main.temp + '°C</p>';
-  html += '<p><strong>Gefühlt wie:</strong> ' + data.main.feels_like + '°C</p>';
-  html += '<p><strong>Luftdruck:</strong> ' + data.main.pressure + ' hPa</p>';
-  html += '<p><strong>Luftfeuchtigkeit:</strong> ' + data.main.humidity + '%</p>';
-  html += '<p><strong>Sichtweite:</strong> ' + data.visibility + ' Meter</p>';
-  html += '<p><strong>Windgeschwindigkeit:</strong> ' + data.wind.speed + ' m/s</p>';
-  html += '<p><strong>Regen (1h):</strong> ' + (data.rain ? data.rain['1h'] : 'N/A') + ' mm</p>';
-  html += '<p><strong>Bewölkung:</strong> ' + data.clouds.all + '%</p>';
-  html += '<p><strong>Zeitzone:</strong> ' + data.timezone + '</p>';
-  html += '<p><strong>Stadt:</strong> ' + data.name + '</p>';
+  var html = '<p><strong>Weather:</strong> ' + data.weather[0].main + ' - ' + data.weather[0].description + '</p>';
+  html += '<p><strong>Temperature:</strong> ' + data.main.temp + '°C</p>';
+  html += '<p><strong>Perceived temperature:</strong> ' + data.main.feels_like + '°C</p>';
+  html += '<p><strong>Air pressure:</strong> ' + data.main.pressure + ' hPa</p>';
+  html += '<p><strong>Humidity:</strong> ' + data.main.humidity + '%</p>';
+  html += '<p><strong>Visibility:</strong> ' + data.visibility + ' Meter</p>';
+  html += '<p><strong>Wind speed:</strong> ' + data.wind.speed + ' m/s</p>';
+  html += '<p><strong>Rain (1h):</strong> ' + (data.rain ? data.rain['1h'] : 'N/A') + ' mm</p>';
+  html += '<p><strong>Cloudiness:</strong> ' + data.clouds.all + '%</p>';
+  html += '<p><strong>Timezone:</strong> ' + data.timezone + '</p>';
+  html += '<p><strong>City:</strong> ' + data.name + '</p>';
 
-  var overlayHtml = '<div id="weatherOverlay" class="overlay">';
-  overlayHtml += '<div class="overlay-content">';
-  overlayHtml += '<span class="close" onclick="closeWeatherOverlay()">&times;</span>';
-  overlayHtml += html;
-  overlayHtml += '</div></div>';
-// Element mit der ID "weatherInfo" auswählen
-var weatherInfoElement = document.getElementById('weatherInfo');
-// HTML-Code in das Element einfügen
-weatherInfoElement.innerHTML = html + '<a href="#" onclick="toggleWeather()">Details anzeigen</a>' + overlayHtml;
+  weatherInfoElement.innerHTML = html;
 
-  // Hier öffnen wir das Overlay, wenn die Wetterdaten angezeigt werden
-  openWeatherOverlay();
 }
 
 // Funktion aufrufen, um die JSON-Daten abzurufen

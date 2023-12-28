@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Auf dieser Website finden sie Daten und Fakten &uuml;ber ihre eigene und andere IP-Adressen">
+    <meta name="description" content="On this website you will find data and facts about your own and other IP addresses">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dateiscanner</title>
     <!-- Bootstrap CSS -->
@@ -36,8 +36,8 @@
   
   
 <div class="container mt-4">
-  <h1>Willkommen bei IP-Fakten</h1>
-  <p>Lustige und Interessant Fakten &uuml;ber ihre und andere IP-Adressen</p>
+  <h1>Welcome to IP Facts</h1>
+  <p>Fun and interesting facts about your and other IP addresses</p>
 </div>
 
 <div class="pos-f-t">
@@ -46,18 +46,22 @@
 
 <div class="container mt-4">
   <div class="row">
-    <!-- Linke Spalte für IP-Daten -->
     <div class="col-md-6">
       <h2>IP-Daten</h2>
       <div id="ipInfo"></div>
     </div>
-    <!-- Rechte Spalte für Wetterdaten -->
-    <div class="col-md-6">
-      <h2>Wetterdaten</h2>
-      <div id="weatherInfo"></div>
-    </div>
   </div>
 </div>
+<!-- Modal -->
+<div id="weatherModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeWeatherModal()">&times;</span>
+    <h2 class="modal-title">The weather at your current IP-Adress</h2>
+    <!-- Hier werden die Wetterinformationen angezeigt -->
+    <div id="weatherInfo"></div>
+  </div>
+</div>
+
 
 <script src="ipData.js"></script>
 <script src="weatherData.js"></script>

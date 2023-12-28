@@ -37,29 +37,29 @@ function displayIPInfo(data) {
   // HTML-Code für die Anzeige erstellen
   var html = "<p><strong>IP-Adresse:</strong> " + data.ip + "</p>";
 // Dropdown-Menü hinzufügen
-html += "<div class='dropdown'>";
-html += "<button onclick='toggleDropdown()' class='dropbtn'>Stadt: " + data.city + "</button>";
+html += "<p><div class='dropdown'>";
+html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>Stadt:</strong> " + data.city + "</button>";
 html += "<div id='cityDropdown' class='dropdown-content'>";
-html += "<a href='' onclick='toggleWeather()'>Weather</a>";
-html += "<a href=''>Postal Code: " + data.postal + "</a>";
+html += "<a href='' onclick='toggleWeather(event)'>Weather</a>";
+html += "<a>Postal Code: " + data.postal + "</a>";
 html += "</div>";
-html += "</div>";
+html += "</div></p>";
   html += "<p><strong>Region:</strong> " + data.region + "</p>";
-  html += "<p><strong>Land:</strong> " + data.country_name + "</p>";
-  html += "<p><strong>Land Hauptstadt:</strong> " + data.country_capital + "</p>";
-  html += "<p><strong>Land Bevölkerung:</strong> " + data.country_population + "</p>";
-  html += "<p><strong>Kontinent Code:</strong> " + data.continent_code + "</p>";
+  html += "<p><strong>Country:</strong> " + data.country_name + "</p>";
+  html += "<p><strong>Capital:</strong> " + data.country_capital + "</p>";
+  html += "<p><strong>Population:</strong> " + data.country_population + "</p>";
+  html += "<p><strong>Continent Code:</strong> " + data.continent_code + "</p>";
   html += "<p><strong>In EU:</strong> " + data.in_eu + "</p>";
-  html += "<p><strong>Postleitzahl:</strong> " + data.postal + "</p>";
+  html += "<p><strong>Zip code:</strong> " + data.postal + "</p>";
   html += "<p><strong>Latitude:</strong> " + data.latitude + "</p>";
   html += "<p><strong>Longitude:</strong> " + data.longitude + "</p>";
-  html += "<p><strong>Zeitzone:</strong> " + data.timezone + "</p>";
+  html += "<p><strong>Timezone:</strong> " + data.timezone + "</p>";
   html += "<p><strong>UTC Offset:</strong> " + data.utc_offset + "</p>";
-  html += "<p><strong>Landesvorwahl:</strong> " + data.country_calling_code + "</p>";
-  html += "<p><strong>Währung:</strong> " + data.currency + "</p>";
-  html += "<p><strong>Währungsname:</strong> " + data.currency_name + "</p>";
-  html += "<p><strong>Sprachen:</strong> " + data.languages + "</p>";
-  html += "<p><strong>Organisation:</strong> " + data.org + "</p>";
+  html += "<p><strong>Country code:</strong> " + data.country_calling_code + "</p>";
+  html += "<p><strong>Currency:</strong> " + data.currency + "</p>";
+  html += "<p><strong>Name of currency:</strong> " + data.currency_name + "</p>";
+  html += "<p><strong>Languages:</strong> " + data.languages + "</p>";
+  html += "<p><strong>Organization:</strong> " + data.org + "</p>";
   // HTML-Code in das Element einfügen
   ipInfoElement.innerHTML = html;
 }
@@ -68,24 +68,31 @@ function toggleDropdown() {
   var dropdown = document.getElementById("cityDropdown");
   dropdown.classList.toggle("show");
 }
-function toggleWeather() {
-  getWeatherInfo(); // Die Wetterdaten abrufen
-  openWeatherOverlay(); // Das Overlay öffnen
+// Funktion zum Anzeigen des Modal
+function toggleWeather(event) {
+  event.preventDefault();
+  var modal = document.getElementById('weatherModal');
+  modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+
+  if (modal.style.display == 'block'){
+    getWeatherInfo();
+  }
 }
 
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+// Funktion zum Schließen des Modals
+function closeWeatherModal() {
+  document.getElementById('weatherModal').style.display = 'none';
+  // Schließe auch das Dropdown-Menü, wenn es geöffnet ist
+  var dropdown = document.getElementById("cityDropdown");
+  if (dropdown.classList.contains('show')) {
+    dropdown.classList.remove('show');
   }
+}
+
+// Funktion zum Öffnen des Modals
+function openWeatherOverlay() {
+  // Hier können Sie zusätzliche Aktionen hinzufügen, wenn das Modal geöffnet wird
+  toggleWeather();
 }
 // Funktion aufrufen, um die JSON-Daten abzurufen
 getIPInfo();

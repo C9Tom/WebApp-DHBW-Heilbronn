@@ -1,7 +1,7 @@
 // Funktion zum Abrufen der JSON-Daten
 function getWeatherInfo() {
   // URL für die JSON-Daten
-  var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + globalLatitude + '&lon=' + globalLongitude + '&appid=694dee5528dec74b53bfe0d732504cda&units=metric';
+  var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + globalLatitude + '&lon=' + globalLongitude + '&appid=APIKEY&units=metric';
 
   // Fetch verwenden, um die Daten abzurufen
   fetch(url)

@@ -2,10 +2,10 @@
 var globalLatitude;
 var globalLongitude;
 
-// Funktion zum Abrufen der JSON-Daten
-function getIPInfo() {
-  // URL für die JSON-Daten
-  var url = "https://ipapi.co/json/";
+// Funktion zum Abrufen der JSON-Daten mit einer optionalen IP-Adresse als Parameter
+function getIPInfo(ipAddress) {
+  // Erzeuge die URL basierend auf der übergebenen IP-Adresse oder verwende die Standard-URL
+  var url = ipAddress ? `https://ipapi.co/${ipAddress}/json/` : "https://ipapi.co/json/";
 
   // Fetch verwenden, um die Daten abzurufen
   fetch(url)
@@ -35,7 +35,7 @@ function displayIPInfo(data) {
   // Element mit der ID "ipInfo" auswählen
   var ipInfoElement = document.getElementById("ipInfo");
   // HTML-Code für die Anzeige erstellen
-  var html = "<p><strong>IP-Adresse:</strong> " + data.ip + "</p>";
+  var html = "<p><strong>IPv6-Adresse:</strong> " + data.ip + "</p>";
 // Dropdown-Menü hinzufügen
 html += "<p><div class='dropdown'>";
 html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>Stadt:</strong> " + data.city + "</button>";
@@ -50,7 +50,6 @@ html += "</div></p>";
   html += "<p><strong>Population:</strong> " + data.country_population + "</p>";
   html += "<p><strong>Continent Code:</strong> " + data.continent_code + "</p>";
   html += "<p><strong>In EU:</strong> " + data.in_eu + "</p>";
-  html += "<p><strong>Zip code:</strong> " + data.postal + "</p>";
   html += "<p><strong>Latitude:</strong> " + data.latitude + "</p>";
   html += "<p><strong>Longitude:</strong> " + data.longitude + "</p>";
   html += "<p><strong>Timezone:</strong> " + data.timezone + "</p>";

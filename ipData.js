@@ -38,7 +38,7 @@ function displayIPInfo(data) {
   var html = "<p><strong>IPv6-Adresse:</strong> " + data.ip + "</p>";
 // Dropdown-Menü hinzufügen
 html += "<p><div class='dropdown'>";
-html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>Stadt:</strong> " + data.city + "</button>";
+html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>City:</strong> " + data.city + "</button>";
 html += "<div id='cityDropdown' class='dropdown-content'>";
 html += "<a href='' onclick='toggleWeather(event)'>Weather</a>";
 html += "<a>Postal Code: " + data.postal + "</a>";

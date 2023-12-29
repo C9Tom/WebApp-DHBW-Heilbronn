@@ -27,6 +27,9 @@
 }
 
 .navbar-toggler {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
     border: 1px solid #401d96ff;
 }
 

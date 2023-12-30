@@ -1,4 +1,4 @@
-// Funktion zum Abrufen der JSON-Daten
+// Funktion zum Abrufen der Wetterdaten basierend auf globalen Koordinaten
 function getWeatherInfo() {
   // URL für die JSON-Daten
   var url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + globalLatitude + '&lon=' + globalLongitude + '&appid=694dee5528dec74b53bfe0d732504cda&units=metric';
@@ -7,15 +7,15 @@ function getWeatherInfo() {
   fetch(url)
       .then(response => response.json())
       .then(data => {
-          // Funktion aufrufen, um die Daten anzuzeigen
+          // Funktion aufrufen, um die erhaltenen Daten anzuzeigen
           displayWeatherInfo(data);
       })
       .catch(error => {
           console.error('Fehler beim Abrufen der Daten:', error);
       });
-    }
+}
 
-// Funktion zum Anzeigen der JSON-Daten auf der Webseite
+// Funktion zum Anzeigen der Wetterdaten auf der Webseite
 function displayWeatherInfo(data) {
   // Element mit der ID "weatherInfo" auswählen
   var weatherInfoElement = document.getElementById('weatherInfo');
@@ -33,9 +33,20 @@ function displayWeatherInfo(data) {
   html += '<p><strong>Timezone:</strong> ' + data.timezone + '</p>';
   html += '<p><strong>City:</strong> ' + data.name + '</p>';
 
+  // HTML-Code in das weatherInfoElement einfügen
   weatherInfoElement.innerHTML = html;
-
 }
 
-// Funktion aufrufen, um die JSON-Daten abzurufen
+// Funktion aufrufen, um die Wetterdaten abzurufen
 getWeatherInfo();
+
+//Die Funktion getWeatherInfo ruft Wetterdaten von der 
+//OpenWeatherMap-API ab, basierend auf den globalen Koordinaten. Die Funktion 
+//displayWeatherInfo zeigt die empfangenen Wetterdaten auf der Webseite an. 
+//Schließlich wird die Funktion getWeatherInfo aufgerufen, um die Wetterdaten 
+//abzurufen und anzuzeigen.
+
+
+
+
+

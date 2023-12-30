@@ -35,45 +35,49 @@ function displayIPInfo(data) {
   // Element mit der ID "ipInfo" auswählen
   var ipInfoElement = document.getElementById("ipInfo");
   // HTML-Code für die Anzeige erstellen
-  var html = "<p><strong>IPv6-Adresse:</strong> " + data.ip + "</p>";
-// Dropdown-Menü hinzufügen
-html += "<p><div class='dropdown'>";
-html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>City:</strong> " + data.city + "</button>";
-html += "<div id='cityDropdown' class='dropdown-content'>";
-html += "<a href='' onclick='toggleWeather(event)'>Weather</a>";
-html += "<a>Postal Code: " + data.postal + "</a>";
-html += "</div>";
-html += "</div></p>";
-  html += "<p><strong>Region:</strong> " + data.region + "</p>";
-  html += "<p><strong>Country:</strong> " + data.country_name + "</p>";
-  html += "<p><strong>Capital:</strong> " + data.country_capital + "</p>";
-  html += "<p><strong>Population:</strong> " + data.country_population + "</p>";
-  html += "<p><strong>Continent Code:</strong> " + data.continent_code + "</p>";
-  html += "<p><strong>In EU:</strong> " + data.in_eu + "</p>";
-  html += "<p><strong>Latitude:</strong> " + data.latitude + "</p>";
-  html += "<p><strong>Longitude:</strong> " + data.longitude + "</p>";
-  html += "<p><strong>Timezone:</strong> " + data.timezone + "</p>";
-  html += "<p><strong>UTC Offset:</strong> " + data.utc_offset + "</p>";
-  html += "<p><strong>Country code:</strong> " + data.country_calling_code + "</p>";
-  html += "<p><strong>Currency:</strong> " + data.currency + "</p>";
-  html += "<p><strong>Name of currency:</strong> " + data.currency_name + "</p>";
-  html += "<p><strong>Languages:</strong> " + data.languages + "</p>";
-  html += "<p><strong>Organization:</strong> " + data.org + "</p>";
+  var ipAddressLabel = data.ip.includes(":") ? "IPv6-Adresse" : "IPv4-Adresse";
+  var html = "<p><strong>" + ipAddressLabel + ":</strong> " + data.ip + "</p>";
+  // Dropdown-Menü hinzufügen
+  html += "<p><div class='dropdown'>";
+  html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>City:</strong> " + data.city + "</button>";
+  html += "<div id='cityDropdown' class='dropdown-content'>";
+  html += "<a href='' onclick='toggleWeather(event)'>Weather</a>";
+  html += "<a href='https://www.google.com/search?q=" + data.postal + "'>Postal Code: " + data.postal + "</a>";
+  html += "</div>";
+  html += "</div></p>";
+  html += "<p><strong>Region:</strong> <a href='https://en.wikipedia.org/wiki/" + data.region + "'>" + data.region + "</a></p>";
+  html += "<p><strong>Country:</strong> <a href='https://en.wikipedia.org/wiki/" + data.country_name + "'>" + data.country_name + "</a></p>";
+  html += "<p><strong>Capital:</strong> <a href='https://en.wikipedia.org/wiki/" + data.country_capital + "'>" + data.country_capital + "</a></p>";
+  html += "<p><strong>Population:</strong> <a href='https://en.wikipedia.org/wiki/Demographics_of_" + data.country_name + "'>" + data.country_population + "</a></p>";
+  html += "<p><strong>Continent Code:</strong> <a href='https://en.wikipedia.org/wiki/" + data.continent_code + "'>" + data.continent_code + "</a></p>";
+  html += "<p><strong>In EU:</strong> <a href='https://en.wikipedia.org/wiki/European_Union" + "'>" + data.in_eu + "</a></p>";
+  html += "<p><strong>Latitude:</strong> <a>" + data.latitude + "</a></p>";
+  html += "<p><strong>Longitude:</strong> <a>" + data.longitude + "</a></p>";
+  html += "<p><strong>Timezone:</strong> <a href='https://en.wikipedia.org/wiki/" + data.timezone + "'>" + data.timezone + "</a></p>";
+  html += "<p><strong>UTC Offset:</strong> <a href='https://en.wikipedia.org/wiki/" + data.timezone + "'>" + data.utc_offset + "</a></p>";
+  html += "<p><strong>Country code:</strong> <a href='https://en.wikipedia.org/wiki/" + data.country_calling_code + "'>" + data.country_calling_code + "</a></p>";
+  html += "<p><strong>Currency:</strong> <a href='https://en.wikipedia.org/wiki/" + data.currency + "'>" + data.currency + "</a></p>";
+  html += "<p><strong>Name of currency:</strong> <a href='https://en.wikipedia.org/wiki/" + data.currency_name + "'>" + data.currency_name + "</a></p>";
+  html += "<p><strong>Languages:</strong> <a href='https://en.wikipedia.org/wiki/" + data.languages + "'>" + data.languages + "</a></p>";
+  html += "<p><strong>Organization:</strong> <a href='https://www.google.com/search?q=" + data.org + "'>" + data.org + "</a></p>";
+
   // HTML-Code in das Element einfügen
   ipInfoElement.innerHTML = html;
 }
+
 // Funktion zum Anzeigen des Dropdown-Inhalts
 function toggleDropdown() {
   var dropdown = document.getElementById("cityDropdown");
   dropdown.classList.toggle("show");
 }
+
 // Funktion zum Anzeigen des Modal
 function toggleWeather(event) {
   event.preventDefault();
   var modal = document.getElementById('weatherModal');
   modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
 
-  if (modal.style.display == 'block'){
+  if (modal.style.display == 'block') {
     getWeatherInfo();
   }
 }
@@ -93,5 +97,6 @@ function openWeatherOverlay() {
   // Hier können Sie zusätzliche Aktionen hinzufügen, wenn das Modal geöffnet wird
   toggleWeather();
 }
+
 // Funktion aufrufen, um die JSON-Daten abzurufen
 getIPInfo();

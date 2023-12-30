@@ -1,19 +1,23 @@
+/* Import der Poppins-Schriftart von Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Globale Stilanpassungen */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
+/* Banner-Stilisierung */
 .banner {
     width: 100%;
     height: 100vh;
-    background-image: url(background3.jpg);
+    background-image: url(background.jpg);
     background-size: cover;
     background-position: center;
 }
 
+/* Navbar-Stilisierung */
 .navbar {
     background-color: white !important;
 }
@@ -28,8 +32,8 @@
 
 .navbar-toggler {
     position: absolute;
-    top: 20px; /* Adjust the top position as needed */
-    right: 20px; /* Adjust the right position as needed */
+    top: 20px; /* Nach Bedarf anpassen */
+    right: 20px; /* Nach Bedarf anpassen */
     border: 1px solid #401d96ff;
 }
 
@@ -55,6 +59,7 @@
     color: #401d96ff;
 }
 
+/* Inhaltselemente */
 .content {
     width: 100%;
     position: absolute;
@@ -76,52 +81,7 @@
     line-height: 25px;
 }
 
-.btn-primary,
-.btn-secondary {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #401d96ff;
-    background: transparent;
-    color: #000;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    --bs-btn-bg: disabled;
-    --bs-btn-border-color: disabled;
-    --bs-btn-hover-bg: disabled;
-    --bs-btn-hover-border-color: disabled;
-    --bs-btn-active-bg: disabled;
-    --bs-btn-active-border-color: disabled;
-    --bs-btn-disabled-bg: disabled;
-    --bs-btn-disabled-border-color: disabled;
-}
-
-.btn-primary:hover span,
-.btn-secondary:hover span {
-    width: 100%;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-    border: none;
-}
-
-.buttonAnimation {
-    background: #401d96ff;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
-
+/* Responsive Anpassungen für kleinere Bildschirme */
 @media only screen and (max-width: 1100px) {
     .banner {
         background-image: none;
@@ -138,26 +98,45 @@
     }
 }
 
+/* Hintergrund- und Textfarbe für den gesamten Body */
 body {
     background-color: white;
-    color:#401d96ff;
+    color: #401d96ff;
 }
 
+/* Allgemeine Link-Stilisierung */
+a {
+    color: #401d96ff;
+    text-decoration: none;
+}
+
+/* Stilisierung für Dropdown-Button */
+.dropbtn {
+    color: #401d96ff;
+    text-decoration: none;
+}
+
+/* Hover-Stilisierung für Links und Dropdown-Button */
+a:hover,
+.dropbtn:hover,
+.dropbtn:focus {
+    color: #401d96ff;
+    font-weight: bold;
+}
+
+/* Stilisierung für Dropdown-Button */
 .dropbtn {
     background-color: #ffffff;
-    color:#401d96ff;
     padding: 0px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #41414177;
-}
-
+/* Dropdown-Menü und Dropdown-Inhalte */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -171,23 +150,29 @@ body {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    box-sizing: border-box; /* Hinzugefügt */
 }
 
+/* Stilisierung für Dropdown-Elemente */
 .dropdown-content a {
     color: #401d96ff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    box-sizing: border-box;
 }
 
-.dropdown a:hover {
+/* Hover-Stilisierung für Dropdown-Elemente */
+.dropdown-content a:hover {
     background-color: #ddd;
 }
 
+/* Anzeige für Dropdown-Menü */
 .show {
     display: block;
 }
 
+/* Stilisierung für Overlay */
 .overlay {
     display: none;
     position: fixed;
@@ -198,6 +183,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Stilisierung für Overlay-Inhalte */
 .overlay-content {
     position: absolute;
     top: 50%;
@@ -210,6 +196,7 @@ body {
     max-width: 600px;
 }
 
+/* Stilisierung für Schließen-Button im Overlay */
 .close {
     color: #aaa;
     float: right;
@@ -218,6 +205,7 @@ body {
     cursor: pointer;
 }
 
+/* Hover-Stilisierung für Schließen-Button im Overlay */
 .close:hover,
 .close:focus {
     color: black;
@@ -225,6 +213,7 @@ body {
     cursor: pointer;
 }
 
+/* Stilisierung für Modals */
 .modal {
     display: none;
     position: fixed;
@@ -238,6 +227,7 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Stilisierung für Modals */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -246,6 +236,7 @@ body {
     width: 80%;
 }
 
+/* Stilisierung für Modals */
 .modal .close {
     color: #aaaaaa;
     float: right;
@@ -253,6 +244,7 @@ body {
     font-weight: bold;
 }
 
+/* Hover-Stilisierung für Schließen-Button im Modal */
 .modal .close:hover,
 .modal .close:focus {
     color: #000;
@@ -260,6 +252,7 @@ body {
     cursor: pointer;
 }
 
+/* Stilisierung für Modal-Titel */
 .modal-title {
     color: #401d96ff;
     font-size: 24px;
@@ -268,22 +261,24 @@ body {
     margin-top: 0;
 }
 
-#submitFormContainer{
+/* Stilisierung für verschiedene Elemente basierend auf IDs und Klassen */
+#submitFormContainer {
+    max-width: 500px;
+    position: relative;
+    top: 400px;
+}
+
+#ipInfoContainer {
     position: relative;
     top: 160px;
 }
 
-#ipInfoContainer{
-    position: relative;
-    top: 160px;
-}
-
-
-#weatherModal{
+#weatherModal {
     position: absolute;
     top: 0px;
 }
 
+/* Responsive Anpassungen für kleinere Bildschirme */
 @media only screen and (max-width: 1200px) and (max-height: 1200px) {
     #weatherModal {
         position: absolute;
@@ -291,78 +286,93 @@ body {
     }
 }
 
-.aboutUsContainer{
+/* Stilisierung für About Us-Sektion */
+.aboutUsContainer {
     padding-top: 160px;
 }
 
-.about-1{
+.about-1 {
     margin: 30px;
     padding: 5px;
 }
 
-.about-1 h1{
+.about-1 h1 {
     text-align: center;
     color: #401d96ff;
     font-weight: bold;
 }
 
-.about-1 p{
+.about-1 p {
     text-align: center;
     padding: 3px;
     color: #401d96ff;
 }
 
-.about-item{
+/* Stilisierung für About-Item-Elemente */
+.about-item {
     margin-bottom: 20px;
     margin-top: 20px;
     background-color: white;
-    padding: 80px,30px; 
+    padding: 80px 30px; 
     box-shadow: 0 0 9px rgba(0, 0, 0, .6);
 }
 
-.about-item i{
+.about-item i {
     font-size: 43px;
     margin: 0;
 }
-.about-item h3{
+
+.about-item h3 {
     font-size: 25px;
     margin-bottom: 10px;
 }
-.about-item hr{
+
+.about-item hr {
     width: 46px;
     height: 3px;
     background-color: #401d96ff;
     margin: 0 auto;
     border: none;
 }
-.about-item p{
+
+.about-item p {
     margin-top: 20px;
 }
-.about-item:hover{
+
+/* Hover-Stilisierung für About-Item-Elemente */
+.about-item:hover {
     background-color: #401d96ff;
 }
+
 .about-item:hover i,
 .about-item:hover h3,
-.about-item:hover p{
+.about-item:hover p {
     color: white;
     transition: all 400ms ease-in-out;
 }
-.about-item:hover hr{
+
+.about-item:hover hr {
     background-color: white;
 }
-.about-item:hover i{
+
+.about-item:hover i {
     transform: translateY(-20px);
 }
-footer{
+
+/* Stilisierung für Footer */
+footer {
     position: sticky;
     bottom: 0;
     text-align: center;
     background: #401d96ff;
     padding: 20px;
 }
-footer p{
+
+footer p {
     color: white;
 }
+
+/* Stilisierung für About Us-Banner */
 .bannerAboutUs {
     width: 100%;
     height: 100vh;
@@ -372,3 +382,28 @@ footer p{
     background-color: white;
 }
 
+/* Stilisierung für Form-Label */
+.form-label {
+    padding-left: 10px;
+    font-size: x-large;
+}
+
+/* Stilisierung für Primary-Button */
+.btn-primary {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #401d96ff;
+    background: transparent;
+    color: #401d96ff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    --bs-btn-hover-bg: #401d96;
+    --bs-btn-hover-border-color: #401d96;
+    --bs-btn-active-bg: #401d96;
+    --bs-btn-active-border-color: #401d96;
+}

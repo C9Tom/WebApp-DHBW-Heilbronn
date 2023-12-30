@@ -42,7 +42,7 @@ function displayIPInfo(data) {
   html += "<button onclick='toggleDropdown()' class='dropbtn'><strong>City:</strong> " + data.city + "</button>";
   html += "<div id='cityDropdown' class='dropdown-content'>";
   html += "<a href='' onclick='toggleWeather(event)'>Weather</a>";
-  html += "<a href='https://www.google.com/search?q=" + data.postal + "'>Postal Code: " + data.postal + "</a>";
+  html += "<a href='https://www.google.com/search?q=Postal Code " + data.postal + "'>Postal Code: " + data.postal + "</a>";
   html += "</div>";
   html += "</div></p>";
   html += "<p><strong>Region:</strong> <a href='https://en.wikipedia.org/wiki/" + data.region + "'>" + data.region + "</a></p>";

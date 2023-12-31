@@ -40,13 +40,13 @@ Stelle sicher, dass dein Webbrowser auf dem neuesten Stand ist, um eine optimale
    - Klicke auf den "TRY MY IP" Button
    - Klicke auf den nicht Fett gedruckten Teil des Textes
    - Man wird auf die zugehörige Wikipedia Seite oder auf eine Aufschlüssige Google-Suche weitergeleitet
-   - **AUSNAHMEN**
+   - **AUSNAHMEN**:
      - City: Beispieltext
        - Dropdown-Menü mit Auswahlmöglichkeit
          - Weather
            - Öffnet ein Modal-Fenster, welches Daten über das Aktuelle Wetter an der Position der IP-Adresse liefert
          -  Postal Code: Beispielpostleitzahl
-           - Google-Suche nach:"Postal Code Beispielpostleitzahl"
+            - Google-Suche nach:"Postal Code Beispielpostleitzahl"
      - Latitude: Beispieltext und Longitude: Beispieltext
        - Keine Funktion, da nicht für wichtig erachtet.
 
@@ -64,8 +64,8 @@ Stelle sicher, dass dein Webbrowser auf dem neuesten Stand ist, um eine optimale
      - **Get IP information**
        - Dropdown-Menü, welches zwei Auswahlmöglichkeiten besitzt
          - *My IP*
-           - Führt zu **TRY MY IP**
+           - Führt zu **"TRY MY IP"**
          - *Any IP*
-           - Führt zu **TRY A DIFFERENT IP**
+           - Führt zu **"TRY A DIFFERENT IP"**
      - **About us**
        - Führt zu About us Seite, welche die Beweggründe etc. beschreibt

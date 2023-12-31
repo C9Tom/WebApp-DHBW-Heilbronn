@@ -58,7 +58,7 @@ function displayIPInfo(data) {
   html += "<p><strong>Country code:</strong> <a href='https://en.wikipedia.org/wiki/" + data.country_calling_code + "'>" + data.country_calling_code + "</a></p>";
   html += "<p><strong>Currency:</strong> <a href='https://en.wikipedia.org/wiki/" + data.currency + "'>" + data.currency + "</a></p>";
   html += "<p><strong>Name of currency:</strong> <a href='https://en.wikipedia.org/wiki/" + data.currency_name + "'>" + data.currency_name + "</a></p>";
-  html += "<p><strong>Languages:</strong> <a href='https://en.wikipedia.org/wiki/" + data.languages + "'>" + data.languages + "</a></p>";
+  html += "<p><strong>Languages:</strong> <a href='https://www.google.com/search?q=Language " + data.country_name + "'>" + data.languages + "</a></p>";
   html += "<p><strong>Organization:</strong> <a href='https://www.google.com/search?q=" + data.org + "'>" + data.org + "</a></p>";
 
   // HTML-Code in das Element einfügen

@@ -59,6 +59,13 @@
     color: #401d96ff;
 }
 
+.dropdown-menu {
+    color: #401d96;
+    --bs-dropdown-link-hover-color: #401d96;
+    --bs-dropdown-link-active-bg: #401d96;
+    --bs-dropdown-link-hover-bg: transparent;
+}
+
 /* Inhaltselemente */
 .content {
     width: 100%;
@@ -102,6 +109,11 @@
 body {
     background-color: white;
     color: #401d96ff;
+}
+
+/* h2 Überschriften Bold */
+h2 {
+    font-weight: bold;
 }
 
 /* Allgemeine Link-Stilisierung */
@@ -273,14 +285,18 @@ a:hover,
     top: 160px;
 }
 
-#weatherModal {
+.modal {
     position: absolute;
     top: 0px;
 }
 
+#errorMessage{
+    text-align: center;
+}
+
 /* Responsive Anpassungen für kleinere Bildschirme */
 @media only screen and (max-width: 1200px) and (max-height: 1200px) {
-    #weatherModal {
+    .modal {
         position: absolute;
         top: 160px;
     }

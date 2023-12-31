@@ -35,7 +35,7 @@ function displayIPInfo(data) {
   // Element mit der ID "ipInfo" auswählen
   var ipInfoElement = document.getElementById("ipInfo");
   // HTML-Code für die Anzeige erstellen
-  var ipAddressLabel = data.ip.includes(":") ? "IPv6-Adresse" : "IPv4-Adresse";
+  var ipAddressLabel = data.ip.includes(":") ? "IPv6-Address" : "IPv4-Address";
   var html = "<p><strong>" + ipAddressLabel + ":</strong> " + data.ip + "</p>";
   // Dropdown-Menü hinzufügen
   html += "<p><div class='dropdown'>";

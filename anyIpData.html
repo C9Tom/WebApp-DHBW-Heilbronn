@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="On this website you will find data and facts about your own and other IP addresses">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Any IP Data</title>
+    <title>Any IP data</title>
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -65,7 +65,7 @@
             <div id="ipInfoContainer" style="display: none;">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>IP-Daten</h2>
+                        <h2>IP-Data</h2>
                         <div id="ipInfo"></div>
                         <a href="anyIpData.html" class="btn btn-primary">TRY AGAIN</a>
                     </div>
@@ -93,6 +93,17 @@
                 <div id="weatherInfo"></div>
             </div>
         </div>
+
+        <!-- Modal, das eine Errornachricht zeigt, wenn keine IPv4 oder IPv6 Adresse angegeben wurde oder diese Adresse nicht in gebrauch ist -->
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeErrorModal()">&times;</span>
+                <h2 class="modal-title">ERROR</h2>
+                <!-- Hier wird die errorMessage angezeigt -->
+                <div id="errorMessage"></div>
+            </div>
+        </div>
+  
 
     </div>
     <script src="ipData.js"></script>

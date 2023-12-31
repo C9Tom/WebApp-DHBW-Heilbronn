@@ -388,6 +388,10 @@ footer p {
     color: white;
 }
 
+a.freepik{
+    color: #ffffff;
+}
+
 /* Stilisierung für About Us-Banner */
 .bannerAboutUs {
     width: 100%;
